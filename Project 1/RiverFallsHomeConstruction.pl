@@ -1,7 +1,7 @@
 ## Assignment: Project 1
 ## Author: Kyle Flynn (kyle.flynn5798@yahoo.com)
 ## Version: 0.9.16.2015.1
-## Purpose: To build a program that 
+## Purpose: To build a program that calculates the cost of a future home
 
 use 5.1.4;
 use warnings;
@@ -46,40 +46,7 @@ sub askForQtyCars() {
 }
 
 sub printResults() {
-    my $finalBedrooomPrice = BEDROOM_PRICE * $qtyBedrooms;
-    my $finalBathroomPrice = BATHROOM_PRICE * $qtyBathrooms;
-    my $finalGaragePrice = CAR_SLOT_PRICE * $qtyCars;
-    
-    my $finalHomePrice = BASE_PRICE + $finalBathroomPrice + $finalBedrooomPrice + $finalGaragePrice;
+    my $finalHomePrice = BASE_PRICE + (BEDROOM_PRICE * $qtyBedrooms) + (BATHROOM_PRICE * $qtyBathrooms) + (CAR_SLOT_PRICE * $qtyCars);
     
     print "\nThe total price of lot $lotNumber is " . DOLLAR_SIGN ."$finalHomePrice \n\n";
-    
-    disco();
-}
-
-sub disco() {
-    system("color a");
-    sleep 1;
-    system("color b");
-    sleep 1;
-    system("color d");
-    sleep 1;
-    system("color e");
-    sleep 1;
-    system("color f");
-    sleep 1;
-    system("color 1");
-    sleep 1;
-    system("color 2");
-    sleep 1;
-    system("color 3");
-    sleep 1;
-    system("color 4");
-    sleep 1;
-    system("color 5");
-    sleep 1;
-    system("color 6");
-    sleep 1;
-    system("color f");
-    sleep 1;
 }
