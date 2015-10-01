@@ -129,7 +129,6 @@ sub printGoodbye() {
 sub determineIfContinuing() {
     if ($counterInt < MAX_RECURSIONS) {
         use constant YES => 1;
-        use constant NO => 0;
         
         print "Would you like to return to the program? (0 = no, 1 = yes) ";
     
