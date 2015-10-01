@@ -6,15 +6,16 @@
 use 5.1.4;
 use warnings;
 
-my ($orderNum, $signChars, $totalBill, $counterInt);             #Integer Declarations
-my ($customerName, $signWoodType, $signCharColor);  #String Declarations
+my ($orderNum, $signChars, $totalBill, $counterInt);            #Integer Declarations
+my ($customerName, $signWoodType, $signCharColor);              #String Declarations
 
 use constant MAX_RECURSIONS => 3;
+use constant DOLLAR_SIGN => '$';
 
 sub main() {
     system("cls");
     
-    if(!defined $counterInt) {
+    if (!defined $counterInt) {
         $counterInt = 0;
     }
        
@@ -25,7 +26,7 @@ sub main() {
     setNumOfChars();
     setColorOfChars();
     calculateTotalBill();
-    printTotalBill();
+    printTotalBillAndResults();
 }
 
 main();
@@ -41,7 +42,7 @@ sub setCustomerName() {
 }
 
 sub setWoodType() {
-    print "\nWhat wood type was requested? (0 = pine, 1 = oak) ";
+    print "\nWhat wood type? (0 = whatever I can find laying around, 1 = oak) ";
     chomp ($signWoodType = <STDIN>);
 }
 
@@ -60,7 +61,7 @@ sub resetTotalBill() {
 }
 
 sub calculateTotalBill() {
-    if(!defined($totalBill)) {
+    if (!defined($totalBill)) {
         $totalBill = 0;
     }
     
@@ -69,7 +70,7 @@ sub calculateTotalBill() {
     use constant MAXIMUM_SIGN_CHARS => 6;
     
     # Input constants
-    use constant PINE => 0;
+    use constant EVERYTHING_ELSE => 0;
     use constant OAK => 1;
     use constant BLACK_LETTERING => 0;
     use constant WHITE_LETTERING => 1;
@@ -80,30 +81,36 @@ sub calculateTotalBill() {
     use constant OAK_WOOD_PRICE => 15;
     use constant GOLD_LEAF_COLORING => 12;
     
-    if($signWoodType == OAK) {
+    if ($signWoodType == OAK) {
         $totalBill = $totalBill + OAK_WOOD_PRICE;
-    } elsif (!$signWoodType == PINE) {
+    } elsif (!$signWoodType == EVERYTHING_ELSE) {
         printError();
     }
     
-    if($signChars > MAXIMUM_SIGN_CHARS) {
+    if ($signChars > MAXIMUM_SIGN_CHARS) {
         $totalBill = $totalBill + (($signChars - MAXIMUM_SIGN_CHARS) * PRICE_PER_CHAR);
     }
     
-    if($signCharColor == GOLDLEAF_LETTERING) {
+    if ($signCharColor == GOLDLEAF_LETTERING) {
         $totalBill = $totalBill + GOLD_LEAF_COLORING;
-    } elsif(($signCharColor != BLACK_LETTERING) && ($signCharColor != WHITE_LETTERING)) {
+    } elsif (($signCharColor != BLACK_LETTERING) && ($signCharColor != WHITE_LETTERING)) {
         printError();
     }
-    if($totalBill < MINIMUM_PRICE) {
+    
+    if ($totalBill < MINIMUM_PRICE) {
         $totalBill = MINIMUM_PRICE;
     }
 }
 
-sub printTotalBill() {
+sub printTotalBillAndResults() {
     sleep 1;
     system("cls");
-    print "Your total bill is $totalBill\n\n";
+    print "Order ID: $orderNum\n";
+    print "Customer Name: $customerName\n";
+    print "Sign Wood Type: $signWoodType\n";
+    print "Sign Characters: $signChars\n";
+    print "Sign Character Color: $signCharColor\n\n";
+    print "Your total bill is " . DOLLAR_SIGN . "$totalBill\n\n";
     determineIfContinuing();
 }
 
@@ -120,7 +127,7 @@ sub printGoodbye() {
 }
 
 sub determineIfContinuing() {
-    if($counterInt < MAX_RECURSIONS) {
+    if ($counterInt < MAX_RECURSIONS) {
         use constant YES => 1;
         use constant NO => 0;
         
@@ -129,7 +136,7 @@ sub determineIfContinuing() {
         my $continueInt;
         chomp ($continueInt = <STDIN>);
         
-        if($continueInt == YES) {
+        if ($continueInt == YES) {
             $counterInt++;
             main();
         } else {
