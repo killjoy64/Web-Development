@@ -15,10 +15,6 @@ use constant DOLLAR_SIGN => '$';
 sub main() {
     system("cls");
     
-    if (!defined $counterInt) {
-        $counterInt = 0;
-    }
-       
     resetTotalBill();
     setOrderNumber();
     setCustomerName();
@@ -127,6 +123,10 @@ sub printGoodbye() {
 }
 
 sub determineIfContinuing() {
+    if (!defined $counterInt) {
+        $counterInt = 0;
+    }
+    
     if ($counterInt < MAX_RECURSIONS) {
         use constant YES => 1;
         
