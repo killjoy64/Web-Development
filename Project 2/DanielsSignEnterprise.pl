@@ -1,6 +1,6 @@
 ## Assignment: Project 2
 ## Author: Kyle Flynn (kyle.flynn5798@yahoo.com)
-## Version: 0.9.30.2015.1
+## Version: 0.10.1.2015.1
 ## Purpose: To build a program that calculates the cost of a house sign using logic statements
 
 use 5.1.4;
@@ -122,7 +122,7 @@ sub printError() {
 
 sub printGoodbye() {
     system("cls");
-    print "Goodbye n3rd!\n";
+    print "Goodbye n3rd!\n\n";
     die "";
 }
 
