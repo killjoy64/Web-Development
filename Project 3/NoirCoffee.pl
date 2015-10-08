@@ -77,7 +77,7 @@ sub setItemsOrdered() {
     use constant HIGHEST_ORDER => 12;
     use constant LOWEST_ORDER => 1;
     use constant MAX_ALLOWED_TRIES => 3;
-    my $timesTried = 0;;
+    my $timesTried = 0;
     
     $isOrderCounted = YES;
     $itemsOrdered = 0;
