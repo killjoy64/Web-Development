@@ -6,7 +6,7 @@
 use 5.1.4;
 use warnings;
 
-my ($zipCode, $customerAge, $itemsOrdered, $continueInt, $isOrderCounted);
+my ($zipCode, $customerAge, $itemsOrdered, $continueInt);
 
 use constant YES => 1;
 
@@ -68,33 +68,27 @@ sub setItemsOrdered() {
     use constant MAX_ALLOWED_TRIES => 3;
     my $timesTried = 0;;
     
-    $isOrderCounted = YES;
     $itemsOrdered = 0;
     
     while(($itemsOrdered < LOWEST_ORDER || $itemsOrdered > HIGHEST_ORDER) && $timesTried <= MAX_ALLOWED_TRIES) {
+        print "\nHow many items did the customer order? ";
+        chomp ($itemsOrdered = <STDIN>);
+        
         if($timesTried < MAX_ALLOWED_TRIES) {
-            print "\nHow many items did the customer order? ";
-            chomp ($itemsOrdered = <STDIN>);
+            $timesTried++;
         } else {
             if($itemsOrdered < LOWEST_ORDER) {
-                $isOrderCounted = 0;
-                print "\nError computing order size! This order will not be counted.\n";
+                print "\nError computing order size! The order will not be counted!";
             }
         }
-        $timesTried++;
     }
 }
 
 sub printResults() {
     clearScreen();
-    if($isOrderCounted == YES) {
-        print "============ORDER INFORMATION============\n";
-        print "Customer Age: $customerAge\n";
-        print "Customer Zip Code: $zipCode\n";
-        print "Customer Number of Ordered Items: $itemsOrdered\n";
-    } else {
-        print "That Entire Order Wasn't Counted Because of Your Screw-up.\n";
-    }
+    print "Customer Age: $customerAge\n";
+    print "Customer Zip Code: $zipCode\n";
+    print "Customer Number of Ordered Items: $itemsOrdered\n";
 }
 
 sub printGoodbye() {
