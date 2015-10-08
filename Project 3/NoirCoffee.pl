@@ -6,12 +6,13 @@
 use 5.1.4;
 use warnings;
 
-my ($zipCode, $customerAge, $itemsOrdered, $continueInt, $isOrderCounted);
+my ($zipCode, $customerAge, $itemsOrdered, $continueInt, $isOrderCounted, $ordersFromSameZip, $ordersFromOtherZip, $avgCustomerAge, $ordersOverAge, $ordersUnderAge, $numOfCustomers);
 
 use constant YES => 1;
 
 sub main() {
     setContinueInt();
+	resetStats();
     while($continueInt == YES) {
         clearScreen();
         setZipCode();
@@ -29,6 +30,15 @@ sub clearScreen() {
     system("cls");
 }
 
+sub resetStats() {
+	$ordersFromOtherZip = 0;
+	$ordersFromSameZip = 0;
+	$avgCustomerAge = 0;
+	$numOfCustomers = 0;
+	$ordersOverAge = 0;
+	$ordersUnderAge = 0;
+}
+
 sub setContinueInt() {
     if(!(defined $continueInt)) {
         $continueInt = YES;
@@ -41,9 +51,10 @@ sub setContinueInt() {
 sub setZipCode() {
     use constant LOWEST_ZIP => 501;
     use constant HIGHEST_ZIP => 99950;
-    
+    use constant COFFEE_ZIP => 54984;
+	
     $zipCode = 0;
-    
+	
     while($zipCode < LOWEST_ZIP || $zipCode > HIGHEST_ZIP) {
         print "\nWhat's the customer's zip code? ";
         chomp ($zipCode = <STDIN>);
@@ -87,14 +98,41 @@ sub setItemsOrdered() {
 
 sub printResults() {
     clearScreen();
-    if($isOrderCounted == YES) {
-        print "============ORDER INFORMATION============\n";
+    if ($isOrderCounted == YES) {
+		recalculateStatistics();
+        print "================================ORDER INFORMATION===============================\n";
         print "Customer Age: $customerAge\n";
         print "Customer Zip Code: $zipCode\n";
         print "Customer Number of Ordered Items: $itemsOrdered\n";
+        print "\n===================================ORDER STATS==================================\n";
+		print "Orders From Local Customers: $ordersFromSameZip\n";
+		print "Orders From Outside Customers: $ordersFromOtherZip\n";
+		print "Average Customer Age: $avgCustomerAge\n";
+		print "Orders From Customers Over Age 30: $ordersOverAge\n";
+		print "Orders From Customers Under Age 30: $ordersUnderAge\n";
     } else {
         print "That Entire Order Wasn't Counted Because of Your Screw-up.\n";
     }
+}
+
+sub recalculateStatistics() {
+	use constant AGE_DISCREPENCY => 30;
+	
+	if ($zipCode != COFFEE_ZIP) {
+		$ordersFromOtherZip++;
+	} else {
+		$ordersFromSameZip++;	
+	}
+	
+	if ($customerAge > AGE_DISCREPENCY) {
+		$ordersOverAge++;
+	} else {
+		$ordersUnderAge++;
+	}
+	
+	$numOfCustomers++;
+	
+	$avgCustomerAge = ($customerAge + $avgCustomerAge)/ $numOfCustomers;
 }
 
 sub printGoodbye() {
