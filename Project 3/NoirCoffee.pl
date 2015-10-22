@@ -132,7 +132,7 @@ sub recalculateStatistics() {
 	
 	$numOfCustomers++;
 	
-	$avgCustomerAge = ($customerAge + $avgCustomerAge)/ $numOfCustomers;
+	$avgCustomerAge = ($customerAge + $avgCustomerAge) / $numOfCustomers;
 }
 
 sub printGoodbye() {
