@@ -33,7 +33,6 @@ sub displayWelcome() {
     print "\n1 - Play a game of pig versus a computer";
     print "\n\nWhat would you like to do? ";
     my $option;
-    use constant HELP_ME => 0;
     use constant START_GAME => 1;
     
     chomp ($option = <STDIN>);
@@ -41,7 +40,7 @@ sub displayWelcome() {
     if ($option == START_GAME) {
         print "\nLet the game begin!\n";
         sleep 1;
-    } elsif ($option == HELP_ME) {
+    } else {
         displayHelp();
     }
     
