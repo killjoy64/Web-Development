@@ -17,7 +17,6 @@ my @scores;
 sub main() {
     displayWelcome();
     setContinueProgramInt();
-    setContinueTurnInt();
     resetScore();
     while ($continueInt == YES) {
         setPlayerScore();
@@ -67,23 +66,33 @@ sub setContinueProgramInt() {
 }
 
 sub setContinueTurnInt() {
-    if (!(defined $continueTurnInt)) {
-        $continueTurnInt = YES;
-    } else {
-        if ($diceOne != 1 && $diceTwo != 1) {
-            $scores[$currentTurn][0] = $scores[$currentTurn][0] + ($diceOne + $diceTwo);
-            
+    $continueTurnInt = YES;
+    if($diceOne != 1 && $diceTwo != 1) {
+        $scores[$currentTurn][0] = $scores[$currentTurn][0] + ($diceOne + $diceTwo);
+        if($currentTurn == PLAYER) {
             print "\nWould you like to continue your turn? (0=no, 1=yes) ";
             chomp ($continueTurnInt = <STDIN>);
         } else {
-            if ($diceOne != 1 || $dieTwo != 1) {
-                print "\nA 1 was rolled and your turn must end!\n";
-                sleep 2;
-                $continueTurnInt = 0;
+            $continueTurnInt = int(rand(1));
+            if($continueTurnInt == YES) {
+                print "\nComputer will continue their turn";
+            } else {
+                print "\nComputer will end their turn";
             }
         }
-        
+    } else {
+        if($diceOne == 1 && $diceTwo == 1) {
+            print "\nTwo 1s were rolled and your score was reset to 0";
+            sleep 2;
+            $continueTurnInt = 0;
+            $scores[$currentTurn][0] = 0;
+        } else {
+            print "\nA 1 was rolled and your turn must end!\n";
+            sleep 2;
+            $continueTurnInt = 0;     
+        } 
     }
+    
 }
 
 sub rollDie() {
@@ -109,7 +118,8 @@ sub setPlayerScore() {
     while($continueTurnInt == YES) {
         clearScreen();
         rollDie();
-        print "\nPlayer ($scores[PLAYER][0]) rolled $diceOne and $diceTwo";
+        print "\nPLAYER: $scores[PLAYER][0] | COMPUTER: $scores[COMPUTER][0]\n";
+        print "\nPlayer rolled a $diceOne and $diceTwo";
         setContinueTurnInt();
     }
 }
@@ -120,7 +130,8 @@ sub setComputerScore() {
     while($continueTurnInt == YES) {
         clearScreen();
         rollDie();
-        print "\nComputer ($scores[COMPUTER][0]) rolled $diceOne and $diceTwo";
+        print "\nPLAYER: $scores[PLAYER][0] | COMPUTER: $scores[COMPUTER][0]\n";
+        print "\nComputer rolled a $diceOne and $diceTwo";
         setContinueTurnInt();
     }
 }
