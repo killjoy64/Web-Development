@@ -1,0 +1,81 @@
+// Cooper College maintains a master file of students and credits
+// earned. Each semester the master is updated with a transaction
+// file that contains credits earned during the semester.
+// Each file is sorted in Student ID number order.
+
+start
+   Declarations
+      num masterID
+      string masterName
+      num masterCredits
+      num transID
+      num transCredits
+
+      string bothDone = "Y" 
+      num HIGH_VALUE = 999999
+      InputFile master
+      InputFile trans
+      OutputFile newMaster
+   getReady()
+   while bothDone = "N"
+      detailLoop()
+   endwhile
+   allDone()
+stop
+
+getReady()  
+   open master "studentFile.dat"
+   open trans "semesterCredits.dat"
+   open newMaster "updatedStudentFile.dat"
+   readMaster()
+   checkBoth()
+return
+
+readMaster()
+   input masterID, masterName, masterCredits from master
+return
+
+readTrans()
+   input transID, transCredits from trans
+return
+
+checkBoth()
+   if masterID = HIGH_VALUE AND transID = HIGH_VALUE then
+      bothDone = "Y"
+   endif
+return
+
+detailLoop()
+   if masterID = transID then
+      match()
+   else
+      if masterID = transID then
+         noMasterForTrans()
+      else
+         noTransForMaster()
+      endif
+   endif
+   checkBoth()
+return
+ 
+match()
+   masterCredits = masterCredits + transCredits
+   output masterID, masterName, masterCredits to newMaster
+   readTrans()
+return
+
+noMasterForTrans()
+   output "No master file record maches transaction ", transID
+   readTrans()
+return
+
+noTransForMaster()
+   output masterID, masterName, masterCredits to newMaster
+   readTrans()
+return
+
+allDone()
+   close master
+   close trans
+   close newMaster
+return 
