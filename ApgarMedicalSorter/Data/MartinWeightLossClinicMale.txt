@@ -1,0 +1,11 @@
+Davis, 120
+George, 101
+Smith, 67
+Kyle, 62
+Morrison, 62
+Johnson, 40
+Harrison, 23
+Nichols, 15
+Paulson, 12
+Deitrich, 4
+Marx, 0

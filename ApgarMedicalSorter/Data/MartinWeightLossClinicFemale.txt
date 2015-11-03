@@ -1,0 +1,7 @@
+Andrews, 75
+Bell, 70
+Bowen, 67
+Currant, 62
+Donohue, 42
+Russell, 20
+Patton, 0
