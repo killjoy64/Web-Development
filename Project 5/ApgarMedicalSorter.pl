@@ -49,9 +49,7 @@ sub readData() {
     modifyData();
 }
 
-sub modifyData() {
-    #In here, organize the data some miraculous way || i = rows, j = columns
-    
+sub modifyData() {    
     my $size = @data;
     my $tempVar = 0;
     my $didSwap = 1;
@@ -77,26 +75,34 @@ sub modifyData() {
 sub printData() {
     my @yearCollection = ([],[]);
     my $size = @data;
-    my $yearSize = 0;;
-    my $yearCount = 0;
-    for (my $i = 0; $i < $size; $i++) {
-        $yearSize++;
+    my $yearCount = 1;
+    my $yearSize = 1;
+   	
+   	for (my $i = 0; $i < $size; $i++) {
         if(defined($data[$i + 1])) {
-            if($data[$i][BIRTH_INDEX] != $data[$i + 1][BIRTH_INDEX]) {
-                $yearCount = 1;
-                $yearCollection[$yearSize] = $data[$i][BIRTH_INDEX];
-                $yearCollection[$yearSize][0] = $yearCount;
+            if($data[$i][BIRTH_INDEX] == $data[$i + 1][BIRTH_INDEX]) {
+            	$yearCount++;
+            	$yearCollection[$yearSize][0] = $data[$i][BIRTH_INDEX];
+            	$yearCollection[$yearSize][1] = $yearCount;
             } else {
-                $yearCount++;
-                $yearSize--;
-                $yearCollection[$yearSize] = $data[$i][BIRTH_INDEX];
-                $yearCollection[$yearSize][0] = $yearCount;
-                print "$yearCount\n";
-            }
+            	$yearCollection[$yearSize][0] = $data[$i][BIRTH_INDEX];
+            	$yearCollection[$yearSize][1] = $yearCount;
+            	$yearSize++;
+            	$yearCount = 1;
+         		
+            }            
+        } else {
+        	$yearSize++;
+        	$yearCount = 1;
+        	$yearCollection[$yearSize][0] = $data[$i][BIRTH_INDEX];
+            $yearCollection[$yearSize][1] = $yearCount;
         }
-    }
-    for(my $i = 0; $i < $yearSize; $i++) {
-        print "$yearCollection[$i]: $yearCollection[$i][0]\n";
+   	}
+    
+    for(my $i = 0; $i <= $yearSize; $i++) {
+    	if(defined $yearCollection[$i][0]) {
+			print "Patients born in $yearCollection[$i][0]: $yearCollection[$i][1]\n";    		
+    	}
     }
 }
 
@@ -115,5 +121,5 @@ sub writeData() {
 		print ($OUT "\n");
 	}
 	close $OUT;
-    print "Successfully wrote data";
+    print "\nSuccessfully wrote data to " . DATA_FILE_OUT . "";
 }
