@@ -1,0 +1,49 @@
+body {
+    background-color: #f5570f;
+    font-family: "Arial Unicode MS";
+}
+
+#content {
+    border: 10px solid #f5976e;
+    width: 600px;
+    height: 700px;
+    margin: 30px auto 30px auto;
+}
+
+@media handheld, only screen and (max-width: 600px) {
+    #content {
+
+    }
+}
+
+#text {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 32px;
+    padding: 10% 35% 10% 35%;
+    line-height: 50px;
+}
+
+#logo {
+    position: relative;
+    width: 135px;
+    left: 75%;
+    top: 15px;
+}
+
+#logo img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+#footer {
+    color: #FFFFFF;
+    max-width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+    right: 20%;
+    text-align: center;
+    font-size: 24px;
+}
