@@ -1,0 +1,17 @@
+@import 'defaults';
+
+body {
+  background: linear-gradient(0deg, #f50000, #000000) no-repeat; /* Standard syntax */
+  min-height: 100%;
+}
+
+#content {
+  position: absolute;
+  left:10%;
+  right:10%;
+  top:10%;
+  bottom:10%;
+  max-width:100%;
+  max-height:100%;
+  background-color: #FFFFFF;
+}
