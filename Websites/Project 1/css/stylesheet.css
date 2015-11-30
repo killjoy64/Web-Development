@@ -24,27 +24,22 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-html {
-  min-height: 100%; }
-
 body {
-  min-height: 100%;
-  background: linear-gradient(0deg, #f50000, #000000) no-repeat; }
+  background: linear-gradient(180deg, #f50000, #000000) no-repeat; }
 
 #content {
-  position: absolute;
-  max-width: 100%;
-  height: auto;
-  left: 7%;
-  right: 7%;
-  top: 7%;
-  bottom: 7%;
+  position: relative;
+  max-width: 90%;
+  min-height: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
   padding: 1% 1% 1% 1%;
   background-color: #FFFFFF;
   font-size: 1.75vh;
   border: 2px solid #000000;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  overflow-y: scroll; }
+  font-family: "Trebuchet MS", Helvetica, sans-serif; }
   #content #title {
     font-size: 3.5vh;
     margin-bottom: 1.5%; }
@@ -84,14 +79,18 @@ body {
     height: auto; }
 
 #cliff {
-  min-width: 100%; }
+  min-width: 80%;
+  margin: 2px 2px 0px 2px;
+  border: 2px solid #830001; }
   #cliff img {
-    border: 2px solid #830001;
     width: 100%;
-    min-height: 100%;
     height: auto; }
 
 #quote {
+  padding: 0 2% 0 2%;
+  font-size: 1.65vh; }
+
+#caption {
   padding: 0 4% 0 4%;
   font-size: 1.5vh; }
 
