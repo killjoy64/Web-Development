@@ -24,19 +24,81 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  background: linear-gradient(0deg, #f50000, #000000) no-repeat;
-  /* Standard syntax */
+html {
   min-height: 100%; }
+
+body {
+  min-height: 100%;
+  background: linear-gradient(0deg, #f50000, #000000) no-repeat; }
 
 #content {
   position: absolute;
-  left: 10%;
-  right: 10%;
-  top: 10%;
-  bottom: 10%;
   max-width: 100%;
-  max-height: 100%;
-  background-color: #FFFFFF; }
+  height: auto;
+  left: 7%;
+  right: 7%;
+  top: 7%;
+  bottom: 7%;
+  padding: 1% 1% 1% 1%;
+  background-color: #FFFFFF;
+  font-size: 1.75vh;
+  border: 2px solid #000000;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  overflow-y: scroll; }
+  #content #title {
+    font-size: 3.5vh;
+    margin-bottom: 1.5%; }
+    #content #title b {
+      color: #f50000; }
+  #content #author {
+    font-size: 2.5vh;
+    margin-bottom: 1.5%; }
+  #content #date {
+    font-size: 1.65vh;
+    margin-bottom: 1.5%; }
+  #content P {
+    line-height: 125%; }
+
+#tree-indent {
+  max-width: 5%;
+  padding: .5% .5% .5% .5%; }
+  #tree-indent img {
+    border: 2px solid #830001;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto; }
+
+#comparison {
+  max-width: 40%; }
+  #comparison img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto; }
+
+#xerxes {
+  max-width: 60%;
+  padding: .5% .5% .5% .5%; }
+  #xerxes img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto; }
+
+#cliff {
+  min-width: 100%; }
+  #cliff img {
+    border: 2px solid #830001;
+    width: 100%;
+    min-height: 100%;
+    height: auto; }
+
+#quote {
+  padding: 0 4% 0 4%;
+  font-size: 1.5vh; }
+
+.fl-right {
+  float: right; }
+
+.fl-left {
+  float: left; }
 
 /*# sourceMappingURL=stylesheet.css.map */
