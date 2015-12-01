@@ -103,4 +103,22 @@ body {
 .fl-left {
   float: left; }
 
+@media print {
+  #content {
+    color: #000000; }
+
+  a {
+    text-decoration: none;
+    color: #000000; }
+
+  body {
+    background: #FFFFFF; }
+
+  #cliff {
+    border: 0px; }
+
+  img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); } }
+
 /*# sourceMappingURL=stylesheet.css.map */
