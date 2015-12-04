@@ -1,0 +1,62 @@
+body { 
+	background-image: linear-gradient(#790000, #000);
+	color: #000;
+	}
+main { 
+	border: 3px solid black;
+	background-color: #fff;
+	color: inherit;
+	margin: 5rem;
+	padding: 2rem;
+	} 
+h1, h2 { text-transform: capitalize; line-height: 1; margin-top: 0; }
+h1, h2, h3 { 
+	font-family: Trebuchet MS, Arial, sans-serif;
+	}
+h1 span { color: red; background-color: inherit; }
+p { 
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 1.5; 
+	text-align: justify;
+	} 
+h3 { 
+	color: #666;
+	background-color: inherit;
+	font-size: smaller;
+	} 
+main > p:first-of-type:first-letter { 
+	font-size: 4rem; 
+	background-image: url(images/drop.jpg);
+	background-color: #000;
+	color: #fff;
+	padding: 1.5rem;
+	float: left;
+	margin-right: .6rem;
+	margin-top: .6rem;
+	border: 2px solid #790000;
+	background-size: cover;
+	} 
+main > p:first-of-type:first-line {
+	font-variant: small-caps;
+	} 
+hr {
+	width:100%;
+	padding-top: 20%;
+	background-image: url(images/cliff.jpg);
+	background-size: contain;
+	background-color: #000; color: #f00; 
+	background-repeat: no-repeat;
+	} 
+ol li#footnote { font-size: smaller; }
+.illus { width: 60%; height: auto; }
+.right { float: right; margin-left: 1rem; }
+.left { float: left; margin-right: 1rem; }
+
+@media (max-width: 800px) { 
+	main { margin: 0; border: none; }	
+}
+
+@media (max-width: 500px) { 
+	.illus { display: block; width: 100%; }
+	.left, .right { float: none; margin: 1rem 0; }
+}
