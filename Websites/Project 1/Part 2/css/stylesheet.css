@@ -101,22 +101,28 @@ body {
     border: 6px double #ffffff; }
 
   #mobile {
-    color: #727272; }
+    color: #FFFFFF; }
 
   #tablet, #desktop {
-    color: #ffffff; } }
+    color: #727272; } }
 @media all and (min-width: 480px) and (orientation: landscape) {
   #content #text {
     width: 40%;
     left: 25%;
     font-size: 3vh;
-    border: 6px double #ffffff; } }
-@media all and (min-width: 600px) {
+    border: 6px double #ffffff; }
+
+  #mobile {
+    color: #FFFFFF; }
+
+  #tablet, #desktop {
+    color: #727272; } }
+@media all and (min-width: 600px) and (orientation: portrait) {
   #tablet {
-    color: #727272; }
+    color: #FFFFFF; }
 
   #mobile, #desktop {
-    color: #ffffff; } }
+    color: #727272; } }
 @media all and (min-width: 1200px) {
   #content #text {
     width: 30%;
@@ -125,9 +131,9 @@ body {
     border: 6px double #ffffff; }
 
   #desktop {
-    color: #727272; }
+    color: #FFFFFF; }
 
   #tablet, #mobile {
-    color: #ffffff; } }
+    color: #727272; } }
 
 /*# sourceMappingURL=stylesheet.css.map */

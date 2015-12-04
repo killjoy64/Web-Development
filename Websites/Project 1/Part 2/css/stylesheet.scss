@@ -92,10 +92,10 @@ body {
     }
   }
   #mobile {
-    color: #727272;
+    color: #FFFFFF;
   }
   #tablet, #desktop {
-    color: #ffffff;
+    color: #727272;
   }
 }
 
@@ -108,14 +108,20 @@ body {
       border: 6px double #ffffff;
     }
   }
-}
-
-@media all and (min-width: 600px) {
-  #tablet {
+  #mobile {
+    color: #FFFFFF;
+  }
+  #tablet, #desktop {
     color: #727272;
   }
+}
+
+@media all and (min-width: 600px) and (orientation: portrait) {
+  #tablet {
+    color: #FFFFFF;
+  }
   #mobile, #desktop {
-    color: #ffffff;
+    color: #727272;
   }
 }
 
@@ -129,9 +135,9 @@ body {
     }
   }
   #desktop {
-    color: #727272;
+    color: #FFFFFF;
   }
   #tablet, #mobile{
-    color: #ffffff;
+    color: #727272;
   }
 }
