@@ -135,5 +135,15 @@ body {
 
   #tablet, #mobile {
     color: #727272; } }
+@media print {
+  #icons {
+    width: 0%; }
+    #icons span {
+      display: none; }
+
+  #title {
+    width: 100%; }
+    #title h1 {
+      text-align: center; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
