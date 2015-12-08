@@ -1,0 +1,14 @@
+@media print {
+  #icons {
+    width: 0%;
+    span {
+      display: none;
+    }
+  }
+  #title {
+    width: 100%;
+    h1 {
+      text-align: center;
+    }
+  }
+}
