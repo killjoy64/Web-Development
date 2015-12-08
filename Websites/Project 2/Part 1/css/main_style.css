@@ -1,0 +1,75 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: #ffffff; }
+
+@font-face {
+  font-family: 'Jane-Austen';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/janeausten.woff") format("woff"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/janeausten.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Aspira';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/aspira.otf") format("opentype"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/aspira.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Pesaro';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/pesaro-light.otf") format("opentype"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/pesaro-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+#container {
+  position: relative;
+  width: 40%;
+  max-height: 90%;
+  margin-top: 5%;
+  bottom: 5%;
+  left: 30%;
+  right: 30%;
+  border: 2px solid #000000; }
+
+#header {
+  position: relative;
+  width: 100%;
+  height: 15%; }
+  #header #publisher {
+    text-transform: uppercase;
+    font-famliy: 'Aspira'; }
+
+#container #volume {
+  font-family: Pesaro; }
+  #container #volume #v_text {
+    font-family: Pesaro; }
+  #container #volume #v_num {
+    font-family: Pesaro; }
+#container #side_text {
+  font-family: Jane-Austen; }
+
+#footer {
+  font-family: Pesaro; }
+
+/*# sourceMappingURL=main_style.css.map */
