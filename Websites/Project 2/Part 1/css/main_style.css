@@ -45,13 +45,29 @@ body {
   font-style: normal; }
 #container {
   position: absolute;
-  width: 40%;
+  border: 2px solid #000000;
+  width: 90%;
+  left: 5%;
+  right: 5%;
   height: 90%;
   margin-top: 5%;
-  bottom: 5%;
-  left: 30%;
-  right: 30%;
-  border: 2px solid #000000; }
+  bottom: 5%; }
+  @media only screen and (min-width: 768px) and (min-device-width: 768px) {
+    #container {
+      width: 40%;
+      height: 90%;
+      margin-top: 5%;
+      bottom: 5%;
+      left: 30%;
+      right: 30%; } }
+  @media all and (min-width: 1280px) and (min-device-width: 1280px) {
+    #container {
+      width: 60%;
+      height: 90%;
+      margin-top: 5%;
+      bottom: 5%;
+      left: 20%;
+      right: 20%; } }
 
 #header {
   position: relative;
@@ -62,21 +78,30 @@ body {
   #header #publisher {
     position: relative;
     text-transform: uppercase;
-    font-size: 1.15vw;
-    font-famliy: Aspira;
+    font-size: 1.50vw;
+    font-famliy: 'Aspira', sans-serif;
     width: 35%;
     height: 50%;
     top: 0%;
-    left: 3%;
+    left: 10%;
     border-top: 1px solid #000000;
     border-bottom: 1px solid #000000;
     text-align: center;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    justify-content: center; }
   #header #title {
+    font-famliy: 'Aspira', sans-serif;
     position: relative;
-    font-size: 4.5vw;
-    left: 10%; }
+    font-size: 8vw;
+    left: 15%; }
+  @media only screen and (min-width: 768px) and (min-device-width: 768px) {
+    #header #publisher {
+      font-size: 1.15vw;
+      left: 3%; }
+    #header #title {
+      font-size: 4.5vw;
+      left: 10%; } }
 
 #content {
   position: relative;
@@ -85,24 +110,52 @@ body {
   display: flex;
   justify-content: space-around; }
   #content #volume {
-    width: 10%;
+    width: 15%;
     display: flex;
-    font-family: Pesaro; }
-    #content #volume #v_text {
-      font-family: Pesaro; }
-    #content #volume #v_num {
-      font-family: Pesaro; }
+    color: #818181;
+    font-family: Pesaro;
+    font-size: 8vw;
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    -webkit-transform-origin: 60% 60% 0;
+    -moz-transform-origin: 60% 60% 0;
+    -ms-transform-origin: 60% 60% 0;
+    -o-transform-origin: 60% 60% 0;
+    transform-origin: 60% 60% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  #content #issue {
+    font-fmaily: 'Pesaro';
+    color: #818181;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 11%;
+    right: 7.5%;
+    font-size: 3vw; }
+    #content #issue sup {
+      font-size: 1.5vw; }
+    #content #issue .left-more {
+      right: 15%; }
   #content #cover_art {
     width: 70%;
-    display: flex; }
+    display: flex;
+    justify-content: center; }
     #content #cover_art img {
       max-width: 100%;
       max-height: 100%; }
   #content #side_text {
-    width: 10%;
+    color: #80755b;
+    width: 15%;
     display: flex;
     font-family: Jane-Austen;
-    font-size: 0.95vw;
+    font-size: 2.05vw;
     -webkit-writing-mode: vertical-lr;
     writing-mode: vertical-lr;
     -webkit-transform: rotate(-180deg);
@@ -112,7 +165,33 @@ body {
     -moz-transform-origin: 25% 50% 0;
     -ms-transform-origin: 25% 50% 0;
     -o-transform-origin: 25% 50% 0;
-    transform-origin: 25% 50% 0; }
+    transform-origin: 25% 50% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: -20%; }
+  @media only screen and (min-width: 600px) and (min-device-width: 600px) {
+    #content #issue {
+      bottom: 0; } }
+  @media only screen and (min-width: 768px) and (min-device-width: 768px) {
+    #content #volume {
+      font-size: 6vw; }
+    #content #issue {
+      bottom: -10%;
+      right: 10%; }
+    #content #cover_art {
+      justify-content: inherit; }
+    #content #side_text {
+      font-size: 1.05vw; } }
+  @media all and (min-width: 1280px) and (min-device-width: 1280px) {
+    #content #volume {
+      font-size: 5vw; }
+    #content #issue {
+      bottom: -20%; }
+    #content #side_text {
+      font-size: 1vw;
+      bottom: -10%; } }
 
 #footer {
   position: relative;
