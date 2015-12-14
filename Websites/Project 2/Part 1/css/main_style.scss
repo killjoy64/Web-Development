@@ -38,6 +38,12 @@ body {
   margin-top: 5%;
   bottom: 5%;
 
+  @media all and (orientation: landscape) {
+    width: 60%;
+    left: 20%;
+    right: 20%;
+  }
+
   @media only screen and (min-width: 600px) and (min-device-width: 600px) {
 
   }
@@ -185,6 +191,19 @@ body {
     justify-content: center;
     position: relative;
     bottom: -20%;
+  }
+
+  @media all and (orientation: landscape) {
+    #side_text {
+      font-size: 1.5vw;
+      bottom: -7.5%;
+    }
+    #volume {
+      font-size: 6vw;
+    }
+    #issue {
+      bottom: -25%;
+    }
   }
 
   @media only screen and (min-width: 600px) and (min-device-width: 600px) {
