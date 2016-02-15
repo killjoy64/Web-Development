@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Passion+One|Inconsolata);
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  overflow-x: hidden;
+  background: #202020;
+  z-index: 0; }
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/background.gif") no-repeat fixed;
+  background-size: cover;
+  opacity: 0.4;
+  z-index: -1; }
+
+main {
+  color: #ffffff;
+  height: 50vh;
+  margin-top: 25vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.5); }
+  main #title {
+    text-align: center;
+    opacity: 1.0;
+    font-size: 3vw;
+    font-family: 'Passion One', cursive; }
+  main form {
+    opacity: 1.0;
+    font-size: 1.5vw;
+    padding: 10px 20px 10px 20px;
+    font-family: 'Inconsolata'; }
+    main form #submit {
+      position: relative;
+      top: 25vh;
+      left: 20vw;
+      width: 10vw;
+      font-size: 1.5vw; }
+
+/*# sourceMappingURL=main_style.css.map */

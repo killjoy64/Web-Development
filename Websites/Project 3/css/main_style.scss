@@ -1,0 +1,49 @@
+@import '_defaults';
+@import url(https://fonts.googleapis.com/css?family=Passion+One|Inconsolata);
+
+body {
+  overflow-x: hidden;
+  background: #202020;
+  z-index: 0;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/background.gif") no-repeat fixed;
+  background-size: cover;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+main {
+  color: #ffffff;
+  height: 50vh;
+  margin-top: 25vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  #title {
+    text-align: center;
+    opacity: 1.0;
+    font-size: 3vw;
+    font-family: 'Passion One', cursive;
+  }
+  form {
+    opacity: 1.0;
+    font-size: 1.5vw;
+    padding: 10px 20px 10px 20px;
+    font-family: 'Inconsolata';
+    #submit {
+      position: relative;
+      top: 25vh;
+      left: 20vw;
+      width: 10vw;
+      font-size: 1.5vw;
+    }
+  }
+}
