@@ -19,7 +19,7 @@ export default class LoadDataClass {
                 data = request.responseText.split(/\n/);
             }
             for (let i = 0; i < data.length; i++) {
-                middleData = data[i].split(/,/);
+                middleData = data[i].split(/:/);
                 finalData[i] = []; //makes it an MD array
                 for (let j = 0; j < COLUMNS; j++) {
                     finalData[i][j] = middleData[j];
@@ -27,5 +27,13 @@ export default class LoadDataClass {
             }
             callback(finalData);
         };
+    }
+
+    printData(finalData) {
+        for (let i = 0; i < finalData.length; i++) {
+            for (let j = 0; j < 3; j++) {
+                console.log(i + "," + j);
+            }
+        }
     }
 }

@@ -3,19 +3,13 @@
  */
 "use strict";
 
+import { ClickHandler } from 'ClickHandler';
+
 window.onload = function() {
-    let submitBtn = document.getElementById("submit");
 
-    submitBtn.addEventListener("click", function() {
-        let pathOneChecked = document.getElementById("option-one").checked;
-        let pathTwoChecked = document.getElementById("option-two").checked;
+    let clickHandler = new ClickHandler();
+    //let pathContent = new FileReader.loadData("../data/scene-0.csv", "");
 
-        if (pathOneChecked) {
-            alert("You selected path one!");
-        } else if (pathTwoChecked) {
-            alert("You selected path two!");
-        } else {
-            alert("You need to select an answer!")
-        }
-    });
+    clickHandler.init("submit");
+
 }
