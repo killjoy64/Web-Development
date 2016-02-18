@@ -3,13 +3,16 @@
  */
 "use strict";
 
-import { ClickHandler } from 'ClickHandler';
+import SceneManager from './SceneManager';
+import FormManager from './FormManager';
+import SceneLoader from './SceneLoader';
 
 window.onload = function() {
 
-    let clickHandler = new ClickHandler();
-    //let pathContent = new FileReader.loadData("../data/scene-0.csv", "");
+    let formHandler = new FormManager();
+    let sceneManager = new SceneManager();
 
-    clickHandler.init("submit");
+    sceneManager.init();
+    formHandler.check(sceneManager.processAnswer);
 
-}
+};

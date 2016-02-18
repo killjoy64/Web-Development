@@ -3,37 +3,33 @@
  */
 "use strict";
 
-export default class LoadDataClass {
+export default class PathReader {
+
     constructor() {
 
     }
 
-    loadData(filePath, callback) {
+    static loadData(filePath, callback) {
+        console.log("Scene Path: " + filePath);
+
         let request = new XMLHttpRequest();
-        request.open("GET", filePath, true);
+        request.open("GET", "/Project 3/" + filePath, true);
         request.send();
         request.onload = function() {
-            const COLUMNS = 3;
-            let data, middleData, finalData = [];
+            const COLUMNS = 2;
+            let data, middleData, fileData = [];
             if (request.readyState === 4 && request.status === 200) {
                 data = request.responseText.split(/\n/);
             }
             for (let i = 0; i < data.length; i++) {
                 middleData = data[i].split(/:/);
-                finalData[i] = []; //makes it an MD array
+                fileData[i] = []; //makes it an MD array
                 for (let j = 0; j < COLUMNS; j++) {
-                    finalData[i][j] = middleData[j];
+                    fileData[i][j] = middleData[j];
                 }
             }
-            callback(finalData);
+            callback(fileData);
         };
     }
 
-    printData(finalData) {
-        for (let i = 0; i < finalData.length; i++) {
-            for (let j = 0; j < 3; j++) {
-                console.log(i + "," + j);
-            }
-        }
-    }
 }

@@ -38,6 +38,17 @@ main {
     font-size: 1.5vw;
     padding: 10px 20px 10px 20px;
     font-family: 'Inconsolata';
+    #path-descr {
+      font-size: 2vw;
+      position: relative;
+    }
+    #path-options {
+      position: relative;
+      margin-top: 2vh;
+      #option-one-loc, #option-two-loc {
+        display: none;
+      }
+    }
     #submit {
       position: relative;
       top: 25vh;
