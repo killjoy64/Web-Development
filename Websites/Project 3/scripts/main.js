@@ -3,16 +3,12 @@
  */
 "use strict";
 
-import SceneManager from './SceneManager';
-import FormManager from './FormManager';
-import SceneLoader from './SceneLoader';
+import Game from './Game';
 
 window.onload = function() {
 
-    let formHandler = new FormManager();
-    let sceneManager = new SceneManager();
+    let game = new Game();
 
-    sceneManager.init();
-    formHandler.check(sceneManager.processAnswer);
+    game.init();
 
 };

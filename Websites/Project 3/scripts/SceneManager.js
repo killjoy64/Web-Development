@@ -15,8 +15,11 @@ export default class SceneManager {
         SceneLoader.loadData("data/scene-0.csv", this.showScene);
     }
 
-    showScene(fileData) {
-        console.log("Showing new scene");
+    createScene(fileData) {
+        let sceneManager = new SceneManager();
+
+        sceneManager.clearFields();
+
         const COLUMNS = 2;
 
         for (let i = 0; i < fileData.length; i++) {
@@ -38,15 +41,35 @@ export default class SceneManager {
                 }
             }
         }
+
+        document.getElementById("continue-btn").addEventListener("click", sceneManager.processAnswer);
     }
 
-    processAnswer(pathChosen) {
-        if (pathChosen == 1) {
-            //SceneLoader.loadData("data/" + document.getElementById("option-one-loc").innerText, this.showScene);
-            SceneLoader.loadData("data/scene-0.csv", this.showScene);
-        }
-        if (pathChosen == 2) {
-            SceneLoader.loadData("data/" + document.getElementById("option-two-loc").innerText, this.showScene);
+    clearFields() {
+        document.getElementById("path-descr").innerText = "";
+        document.getElementById("option-one-txt").innerText = ".";
+        document.getElementById("option-two-txt").innerText = ".";
+        document.getElementById("option-one-loc").innerText = "";
+        document.getElementById("option-two-loc").innerText = "";
+        document.getElementById("option-one").checked = false;
+        document.getElementById("option-two").checked = false;
+    }
+
+    processAnswer() {
+        let sceneManager = new SceneManager();
+
+        let pathOneChecked = document.getElementById("option-one").checked;
+        let pathTwoChecked = document.getElementById("option-two").checked;
+
+        let pathOneHasValue = document.getElementById("option-one-txt").innerText != ".";
+        let pathTwoHasValue = document.getElementById("option-two-txt").innerText != ".";
+
+        if (pathOneChecked && pathOneHasValue) {
+            SceneLoader.loadData("data/" + document.getElementById("option-one-loc").innerText, sceneManager.createScene);
+        } else if (pathTwoChecked && pathTwoHasValue) {
+            SceneLoader.loadData("data/" + document.getElementById("option-two-loc").innerText, sceneManager.createScene);
+        } else {
+            alert("You must choose a path, sir!");
         }
     }
 

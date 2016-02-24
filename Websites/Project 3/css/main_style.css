@@ -43,35 +43,75 @@ body {
 
 main {
   color: #ffffff;
-  height: 50vh;
-  margin-top: 25vh;
+  height: 90vh;
+  margin-top: 5vh;
+  width: 90vw;
   margin-left: auto;
   margin-right: auto;
-  width: 50vw;
   background-color: rgba(0, 0, 0, 0.5); }
+  @media all and (min-width: 1280px) and (min-device-width: 1280px) {
+    main {
+      height: 50vh;
+      margin-top: 25vh;
+      width: 50vw; } }
   main #title {
+    position: relative;
+    top: 5vh;
+    height: 20vh;
+    opacity: 1.0;
+    font-size: 10vw;
     text-align: center;
-    opacity: 1.0;
-    font-size: 3vw;
     font-family: 'Passion One', cursive; }
+    @media all and (min-width: 1280px) and (min-device-width: 1280px) {
+      main #title {
+        top: 1vh;
+        height: 5vh;
+        opacity: 1.0;
+        font-size: 3vw; } }
   main form {
+    position: relative;
+    height: 70vh;
     opacity: 1.0;
-    font-size: 1.5vw;
-    padding: 10px 20px 10px 20px;
+    font-size: 7vw;
+    padding: 20px 30px 20px 30px;
     font-family: 'Inconsolata'; }
+    main form fieldset {
+      position: relative; }
     main form #path-descr {
-      font-size: 2vw;
+      font-size: 5vw;
       position: relative; }
     main form #path-options {
       position: relative;
       margin-top: 2vh; }
       main form #path-options #option-one-loc, main form #path-options #option-two-loc {
         display: none; }
-    main form #submit {
-      position: relative;
-      top: 25vh;
-      left: 20vw;
-      width: 10vw;
-      font-size: 1.5vw; }
+    main form #continue-btn {
+      position: absolute;
+      bottom: 5vh;
+      font-size: 5vw;
+      left: 37.5%; }
+    @media all and (min-width: 1280px) and (min-device-width: 1280px) {
+      main form {
+        height: 45vh;
+        opacity: 1.0;
+        font-size: 1.5vw;
+        padding: 10px 20px 10px 20px; }
+        main form #path-descr {
+          font-size: 2vw; }
+        main form #continue-btn {
+          position: absolute;
+          bottom: 5vh;
+          left: 20vw;
+          width: 10vw;
+          font-size: 1.5vw; } }
+
+input[type=radio] {
+  border: 0px;
+  width: 5vw;
+  height: 5vh; }
+  @media all and (min-width: 1280px) and (min-device-width: 1280px) {
+    input[type=radio] {
+      width: 2vw;
+      height: 2vh; } }
 
 /*# sourceMappingURL=main_style.css.map */
