@@ -3,12 +3,11 @@
  */
 "use strict";
 
-import Game from './Game';
+import SceneManager from './SceneManager';
 
 window.onload = function() {
 
-    let game = new Game();
-
-    game.init();
+    let sceneManager = new SceneManager();
+    sceneManager.init();
 
 };

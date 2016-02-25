@@ -4,6 +4,7 @@
 "use strict";
 
 import SceneLoader from './SceneLoader';
+import TextMasker from './TextMasker';
 
 export default class SceneManager {
 
@@ -12,12 +13,16 @@ export default class SceneManager {
     }
 
     init() {
-        SceneLoader.loadData("data/scene-0.csv", this.showScene);
+        let sceneManager = new SceneManager();
+
+        SceneLoader.loadData("data/scene-0.csv", sceneManager.createScene);
     }
 
     createScene(fileData) {
         let sceneManager = new SceneManager();
+        let textMasker = new TextMasker();
 
+        textMasker.unmask("null");
         sceneManager.clearFields();
 
         const COLUMNS = 2;
@@ -42,13 +47,15 @@ export default class SceneManager {
             }
         }
 
+        textMasker.mask("null");
+
         document.getElementById("continue-btn").addEventListener("click", sceneManager.processAnswer);
     }
 
     clearFields() {
         document.getElementById("path-descr").innerText = "";
-        document.getElementById("option-one-txt").innerText = ".";
-        document.getElementById("option-two-txt").innerText = ".";
+        document.getElementById("option-one-txt").innerText = "null";
+        document.getElementById("option-two-txt").innerText = "null";
         document.getElementById("option-one-loc").innerText = "";
         document.getElementById("option-two-loc").innerText = "";
         document.getElementById("option-one").checked = false;
@@ -61,8 +68,8 @@ export default class SceneManager {
         let pathOneChecked = document.getElementById("option-one").checked;
         let pathTwoChecked = document.getElementById("option-two").checked;
 
-        let pathOneHasValue = document.getElementById("option-one-txt").innerText != ".";
-        let pathTwoHasValue = document.getElementById("option-two-txt").innerText != ".";
+        let pathOneHasValue = document.getElementById("option-one-txt").innerText != "null";
+        let pathTwoHasValue = document.getElementById("option-two-txt").innerText != "null";
 
         if (pathOneChecked && pathOneHasValue) {
             SceneLoader.loadData("data/" + document.getElementById("option-one-loc").innerText, sceneManager.createScene);
