@@ -7,22 +7,24 @@
 export default class TextMasker {
 
     mask(textToHide) {
-        let allElems = document.getElementsByTagName("*");
-
-        for (let i = 0; i < allElems.length; i++) {
-            if (allElems[i].innerText == textToHide) {
-                allElems[i].style.display = "none";
-            }
+        if (document.getElementById("option-one-txt").innerText == textToHide) {
+            document.getElementById("option-one").style.display = "none";
+            document.getElementById("option-one-txt").style.display = "none";
+        }
+        if (document.getElementById("option-two-txt").innerText == textToHide) {
+            document.getElementById("option-two").style.display = "none";
+            document.getElementById("option-two-txt").style.display = "none";
         }
     }
 
     unmask(textToReveal) {
-        let allElems = document.getElementsByTagName("*");
-
-        for (let i = 0; i < allElems.length; i++) {
-            if (allElems[i].innerText == textToReveal) {
-                allElems[i].style.display = "initial";
-            }
+        if (document.getElementById("option-one-txt").innerText == textToReveal) {
+            document.getElementById("option-one").style.display = "initial";
+            document.getElementById("option-one-txt").style.display = "initial";
+        }
+        if (document.getElementById("option-two-txt").innerText == textToReveal) {
+            document.getElementById("option-two").style.display = "initial";
+            document.getElementById("option-two-txt").style.display = "initial";
         }
     }
 

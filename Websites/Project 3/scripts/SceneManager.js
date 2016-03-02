@@ -12,18 +12,15 @@ export default class SceneManager {
 
     }
 
-    init() {
-        let sceneManager = new SceneManager();
-
-        SceneLoader.loadData("data/scene-0.csv", sceneManager.createScene);
+    static init() {
+        SceneLoader.loadData("data/scene-0.csv", SceneManager.createScene);
     }
 
-    createScene(fileData) {
-        let sceneManager = new SceneManager();
+    static createScene(fileData) {
         let textMasker = new TextMasker();
 
         textMasker.unmask("null");
-        sceneManager.clearFields();
+        SceneManager.clearFields();
 
         const COLUMNS = 2;
 
@@ -49,10 +46,10 @@ export default class SceneManager {
 
         textMasker.mask("null");
 
-        document.getElementById("continue-btn").addEventListener("click", sceneManager.processAnswer);
+        document.getElementById("continue-btn").addEventListener("click", SceneManager.processAnswer);
     }
 
-    clearFields() {
+    static clearFields() {
         document.getElementById("path-descr").innerText = "";
         document.getElementById("option-one-txt").innerText = "null";
         document.getElementById("option-two-txt").innerText = "null";
@@ -62,9 +59,7 @@ export default class SceneManager {
         document.getElementById("option-two").checked = false;
     }
 
-    processAnswer() {
-        let sceneManager = new SceneManager();
-
+    static processAnswer() {
         let pathOneChecked = document.getElementById("option-one").checked;
         let pathTwoChecked = document.getElementById("option-two").checked;
 
@@ -72,9 +67,9 @@ export default class SceneManager {
         let pathTwoHasValue = document.getElementById("option-two-txt").innerText != "null";
 
         if (pathOneChecked && pathOneHasValue) {
-            SceneLoader.loadData("data/" + document.getElementById("option-one-loc").innerText, sceneManager.createScene);
+            SceneLoader.loadData("data/" + document.getElementById("option-one-loc").innerText, SceneManager.createScene);
         } else if (pathTwoChecked && pathTwoHasValue) {
-            SceneLoader.loadData("data/" + document.getElementById("option-two-loc").innerText, sceneManager.createScene);
+            SceneLoader.loadData("data/" + document.getElementById("option-two-loc").innerText, SceneManager.createScene);
         } else {
             alert("You must choose a path, sir!");
         }

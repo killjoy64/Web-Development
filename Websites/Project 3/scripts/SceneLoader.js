@@ -13,7 +13,7 @@ export default class PathReader {
         console.log("Scene Path: " + filePath);
 
         let request = new XMLHttpRequest();
-        request.open("GET", "/Project 3/" + filePath, true);
+        request.open("GET", "" + filePath, true);
         request.send();
         request.onload = function() {
             const COLUMNS = 2;

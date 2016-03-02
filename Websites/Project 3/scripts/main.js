@@ -7,7 +7,6 @@ import SceneManager from './SceneManager';
 
 window.onload = function() {
 
-    let sceneManager = new SceneManager();
-    sceneManager.init();
+    SceneManager.init();
 
 };

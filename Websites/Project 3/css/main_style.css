@@ -62,6 +62,9 @@ main {
     font-size: 10vw;
     text-align: center;
     font-family: 'Passion One', cursive; }
+    @media all and (orientation: landscape) {
+      main #title {
+        font-size: 6vw; } }
     @media all and (min-width: 1280px) and (min-device-width: 1280px) {
       main #title {
         top: 1vh;
@@ -90,6 +93,15 @@ main {
       bottom: 5vh;
       font-size: 5vw;
       left: 37.5%; }
+    @media all and (orientation: landscape) {
+      main form {
+        height: 65vh;
+        padding-bottom: 10px;
+        font-size: 4vw; }
+        main form #path-descr {
+          font-size: 3vw; }
+        main form #continue-btn {
+          bottom: 10vh; } }
     @media all and (min-width: 1280px) and (min-device-width: 1280px) {
       main form {
         height: 45vh;
