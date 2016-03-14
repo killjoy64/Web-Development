@@ -1,0 +1,34 @@
+@import '_defaults';
+
+body {
+  background-color: #ED1C24;
+  overflow: hidden;
+}
+
+#wrapper {
+  height: 100vh;
+  width: 95vw;
+  margin-left: 2.5vw;
+}
+
+header {
+  position: relative;
+  height: 10vh;
+}
+
+main {
+  position: relative;
+  height: 80vh;
+  border: 1px solid black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+}
+
+img {
+  max-height: 100%;
+  width: 100%;
+}
