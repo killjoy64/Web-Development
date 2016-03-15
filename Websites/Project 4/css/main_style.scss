@@ -1,34 +1,71 @@
 @import '_defaults';
+@import '_custom';
 
 body {
   background-color: #ED1C24;
   overflow: hidden;
 }
 
-#wrapper {
-  height: 100vh;
-  width: 95vw;
-  margin-left: 2.5vw;
-}
-
-header {
-  position: relative;
-  height: 10vh;
-}
-
-main {
-  position: relative;
-  height: 80vh;
-  border: 1px solid black;
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  height: 10vh;
-}
-
 img {
-  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
+}
+
+.col-12 {
+  width: 100%;
+  display: flex; }
+
+.col-11 {
+  width: 91.6666%;
+  display: flex; }
+
+.col-10 {
+  width: 83.3333%;
+  display: flex; }
+
+.col-9 {
+  width: 75%;
+  display: flex; }
+
+.col-8 {
+  width: 66.6666%;
+  display: flex; }
+
+.col-7 {
+  width: 58.3333%;
+  display: flex; }
+
+.col-6 {
+  width: 50%;
+  display: flex; }
+
+.col-5 {
+  width: 41.6666%;
+  display: flex; }
+
+.col-4 {
+  width: 33.3333%;
+  display: flex; }
+
+.col-3 {
+  width: 25%;
+  display: flex; }
+
+.col-2 {
+  width: 16.6666%;
+  display: flex; }
+
+.col-1 {
+  width: 8.3333%;
+  display: flex; }
+
+.center {
+  justify-content: center;
+  align-items: center;
 }
