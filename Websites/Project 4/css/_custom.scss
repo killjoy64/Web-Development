@@ -1,7 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata|Shadows+Into+Light|Orbitron);
+
 #wrapper {
   height: 100vh;
   width: 95vw;
   margin-left: 2.5vw;
+  @media all and (orientation: landscape) {
+    width: 80vw;
+  }
 }
 
 header {
@@ -23,6 +28,7 @@ main {
 }
 
 footer {
+  font-family: 'Shadows Into Light';
   width: 95vw;
   position: absolute;
   text-align: center;
@@ -31,10 +37,38 @@ footer {
   font-size: 2vh;
 }
 
+#bernie-header {
+  @media all and (orientation: landscape) {
+    width: 10%;
+  }
+}
+
+#output-window {
+  font-family: 'Comic Sans MS';
+  height: 10vh;
+  font-size: 2.5vh;
+}
+
+.w-border {
+  border: 2px solid #FFFFFF;
+}
+
 .footer-img {
   width: 75%;
   margin-left: 12.5%;
   margin-right: 12.5%;
   height: auto;
   max-height: 10vh;
+}
+
+.button {
+  font-family: 'Inconsolata';
+  font-size: 6vw;
+}
+
+input[type=text] {
+  width: 100%;
+  font-size: 2.5vh;
+  height: 2.5vh;
+  color: #000dff;
 }
