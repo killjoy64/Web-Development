@@ -5,14 +5,6 @@
 
 import ATM from './ATM';
 
-class Main {
-    constructor() {
-
-    }
-}
-
 window.onload = function() {
-
-    new Main();
     new ATM();
 };

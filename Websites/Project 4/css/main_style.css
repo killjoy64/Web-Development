@@ -31,7 +31,8 @@ table {
   margin-left: 2.5vw; }
   @media all and (orientation: landscape) {
     #wrapper {
-      width: 80vw; } }
+      width: 80vw;
+      margin-left: 10vw; } }
 
 header {
   width: 95vw;
@@ -41,12 +42,18 @@ header {
   font-size: 4vh; }
   header h1 {
     text-align: center; }
+  @media all and (orientation: landscape) {
+    header {
+      width: 80vw; } }
 
 main {
   width: 95vw;
   position: relative;
   height: 80vh;
   border: 1px solid black; }
+  @media all and (orientation: landscape) {
+    main {
+      width: 80vw; } }
 
 footer {
   font-family: 'Shadows Into Light';
@@ -56,10 +63,41 @@ footer {
   bottom: 0;
   height: 10vh;
   font-size: 2vh; }
+  @media all and (orientation: landscape) {
+    footer {
+      width: 80vw; } }
 
 @media all and (orientation: landscape) {
-  #bernie-header {
-    width: 10%; } }
+  .responsive {
+    flex-direction: row; } }
+
+@media all and (min-width: 320px) {
+  #bernie-header img {
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; } }
+@media all and (orientation: landscape) {
+  #bernie-header img {
+    height: 15%;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10vh; } }
+@media all and (orientation: landscape) and (min-width: 600px) {
+  #bernie-header img {
+    height: 25%;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -15vh; } }
+@media all and (orientation: landscape) and (min-width: 1024px) {
+  #bernie-header img {
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10vh; } }
 
 #output-window {
   font-family: 'Comic Sans MS';
@@ -78,13 +116,36 @@ footer {
 
 .button {
   font-family: 'Inconsolata';
-  font-size: 6vw; }
+  background-color: #000000;
+  font-size: 6vw;
+  border: 1px dotted #FFFFFF;
+  padding: 4px;
+  cursor: pointer; }
+  @media all and (orientation: landscape) {
+    .button {
+      font-size: 2vw; } }
+
+.button:hover {
+  font-family: 'Inconsolata';
+  color: #000000;
+  background-color: #FFFFFF;
+  font-size: 6vw;
+  border: 1px dotted #000000;
+  padding: 4px;
+  cursor: pointer; }
+  @media all and (orientation: landscape) {
+    .button:hover {
+      font-size: 2vw; } }
+
+.behind {
+  z-index: -1; }
 
 input[type=text] {
   width: 100%;
   font-size: 2.5vh;
   height: 2.5vh;
-  color: #000dff; }
+  color: #000dff;
+  text-align: center; }
 
 body {
   background-color: #ED1C24;

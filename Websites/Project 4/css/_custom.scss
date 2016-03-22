@@ -4,8 +4,10 @@
   height: 100vh;
   width: 95vw;
   margin-left: 2.5vw;
+
   @media all and (orientation: landscape) {
     width: 80vw;
+    margin-left: 10vw;
   }
 }
 
@@ -18,6 +20,10 @@ header {
   h1 {
     text-align: center;
   }
+
+  @media all and (orientation: landscape) {
+    width: 80vw;
+  }
 }
 
 main {
@@ -25,6 +31,10 @@ main {
   position: relative;
   height: 80vh;
   border: 1px solid black;
+
+  @media all and (orientation: landscape) {
+    width: 80vw;
+  }
 }
 
 footer {
@@ -35,11 +45,45 @@ footer {
   bottom: 0;
   height: 10vh;
   font-size: 2vh;
+
+  @media all and (orientation: landscape) {
+    width: 80vw;
+  }
 }
 
-#bernie-header {
+.responsive {
   @media all and (orientation: landscape) {
-    width: 10%;
+   flex-direction: row;
+  }
+}
+
+#bernie-header img {
+  @media all and (min-width: 320px) {
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media all and (orientation: landscape) {
+    height: 15%;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10vh;
+  }
+  @media all and (orientation: landscape) and (min-width: 600px) {
+    height: 25%;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -15vh;
+  }
+  @media all and (orientation: landscape) and (min-width: 1024px) {
+    height: 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10vh;
   }
 }
 
@@ -63,7 +107,31 @@ footer {
 
 .button {
   font-family: 'Inconsolata';
+  background-color: #000000;
   font-size: 6vw;
+  border: 1px dotted #FFFFFF;
+  padding: 4px;
+  cursor: pointer;
+  @media all and (orientation: landscape) {
+    font-size: 2vw;
+  }
+}
+
+.button:hover {
+  font-family: 'Inconsolata';
+  color: #000000;
+  background-color: #FFFFFF;
+  font-size: 6vw;
+  border: 1px dotted #000000;
+  padding: 4px;
+  cursor: pointer;
+  @media all and (orientation: landscape) {
+    font-size: 2vw;
+  }
+}
+
+.behind {
+  z-index: -1;
 }
 
 input[type=text] {
@@ -71,4 +139,5 @@ input[type=text] {
   font-size: 2.5vh;
   height: 2.5vh;
   color: #000dff;
+  text-align: center;
 }
