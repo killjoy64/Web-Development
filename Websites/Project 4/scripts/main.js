@@ -6,5 +6,6 @@
 import ATM from './ATM';
 
 window.onload = function() {
-    new ATM();
+    ATM = new ATM();
+    ATM.initButtons();
 };

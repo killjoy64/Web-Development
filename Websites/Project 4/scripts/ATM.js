@@ -10,7 +10,10 @@ export default class ATM {
     }
 
     initButtons() {
-
+        const BUTTONS = 6;
+        for (let i = 0; i < 6; i++) {
+            document.getElementById("button-" + i).innerText = "TESTING";
+        }
     }
 
 }
