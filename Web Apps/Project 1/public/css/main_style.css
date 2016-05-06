@@ -1,4 +1,25 @@
 body {
-  background-color: #da3116; }
+  background-color: #b8dac8; }
+
+.col-wide {
+  width: 37.5%; }
+
+main {
+  margin-top: 20vh; }
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.col-right {
+  width: 20%;
+  height: 6vh;
+  margin-left: 15px; }
+
+.col-left {
+  width: 20%;
+  height: 6vh;
+  margin-right: 15px; }
 
 /*# sourceMappingURL=main_style.css.map */

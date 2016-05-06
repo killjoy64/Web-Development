@@ -10,22 +10,35 @@ class ATMUser {
         this.fileData = new DATA_LOOKUP(this.columns);
         this.fileData.setFinalData("./data/users.csv");
         this.userData = [this.columns];
+        this.foundPin = false;
 
         const PIN_COLUMN = 1;
 
         for (let i = 0; i < this.fileData.finalData.length; i++) {
-            if (this.formData['input'] == this.fileData.finalData[i][PIN_COLUMN]) {
+            if ((this.formData['input'] == this.fileData.finalData[i][PIN_COLUMN]) && this.foundPin == false) {
                 this.row = i;
+                this.foundPin = true;
                 for (let j = 0; j < this.columns; j++) {
                     this.userData[j] = this.fileData.finalData[i][j];
                 }
             }
         }
 
-        this.name = this.userData[0];
-        this.pin = this.userData[1];
-        this.checking = parseFloat(this.userData[2]);
-        this.savings = parseFloat(this.userData[3]);
+        if (this.foundPin == true) {
+            this.name = this.userData[0];
+            this.pin = this.userData[1];
+            this.checking = parseFloat(this.userData[2]);
+            this.savings = parseFloat(this.userData[3]);
+        } else {
+            this.name = 'UNDEFINED';
+            this.pin = '0';
+            this.checking = '0';
+            this.savings = '0';
+        }
+    }
+
+    hasFoundPin() {
+        return this.foundPin;
     }
 
     withdrawSavings(amount) {

@@ -69,7 +69,12 @@ class app {
                 res.writeHead(200, {'content-type': 'text/plain'});
                 if (formData['request'] == null) {
                     console.log("User[" + pin + "] sent a LOGIN request");
-                    res.end(userData.getUserName());
+                    if (userData.hasFoundPin()) {
+                        res.end(userData.getUserName());
+                    } else {
+                        console.log("Error logging user in!");
+                        res.end("NULL");
+                    }
                 } else {
                     let request = formData['request'];
                     if (request == 'balance') {

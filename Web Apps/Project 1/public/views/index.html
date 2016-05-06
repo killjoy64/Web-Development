@@ -2,98 +2,46 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Text Adventure</title>
+        <title>ATM Part 2 Electric Boogaloo</title>
         <link href="public/css/foundation.min.css" rel="stylesheet">
         <link href="public/css/main_style.css" rel="stylesheet">
     </head>
     <body>
         <main>
-            <div class="row">
-                <div class="large-6 columns">
-                    <span id="output">Output Console</span>
+            <div class="row container">
+                <div>
+                    <span id="output" class="">Output Console</span>
                 </div>
             </div>
-            <div class="row centered">
-                <div class="small-3 columns">
-
+            <div class="row container">
+                <form method="post" class="col-wide">
+                    <div>
+                        <input type="text" id="input" name="input" placeholder="Enter PIN Here">
+                    </div>
+                </form>
+            </div>
+            <div class="row container">
+                <div id="button-1" class="button col-left">
+                    <span>Button 1</span>
                 </div>
-                <div class="small-6 columns float-center">
-                    <form method="post">
-                        <div class="row">
-                            <div class="small-6 float-center columns">
-                                <input type="text" id="input" name="input" placeholder="Enter PIN Here">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="small-3 columns">
-
+                <div id="button-2" class="button col-right">
+                    <span>Button 2</span>
                 </div>
             </div>
-            <div class="row">
-                <div class="small-3 columns">
-                    <div>
-
-                    </div>
+            <div class="row container">
+                <div id="button-3" class="button col-left">
+                    <span>Button 3</span>
                 </div>
-                <div class="small-3 columns centered">
-                    <div id="button-1" class="button">
-                        <span>Button 1</span>
-                    </div>
-                </div>
-                <div class="small-3 columns cetered">
-                    <div id="button-2" class="button">
-                        <span>Button 2</span>
-                    </div>
-                </div>
-                <div class="small-3 columns">
-                    <div>
-
-                    </div>
+                <div id="button-4" class="button col-right">
+                    <span>Button 4</span>
                 </div>
             </div>
-            <div class="row">
-                <div class="small-3 columns">
-                    <div>
-
-                    </div>
+            <div class="row container">
+                <div id="button-5" class="button col-left">
+                    <span>Button 5</span>
                 </div>
-                <div class="small-3 columns">
-                    <div id="button-3" class="button">
-                        <span>Button 3</span>
-                    </div>
-                </div>
-                <div class="small-3 columns">
-                    <div id="button-4" class="button">
-                        <span>Button 4</span>
-                    </div>
-                </div>
-                <div class="small-3 columns">
-                    <div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="small-3 columns">
-                    <div>
-
-                    </div>
-                </div>
-                <div class="small-3 columns">
-                    <div id="button-5" class="button">
-                        <span>Button 5</span>
-                    </div>
-                </div>
-                <div class="small-3 columns">
-                    <div id="button-6" class="button">
-                        <span>Button 6</span>
-                    </div>
-                </div>
-                <div class="small-3 columns">
-                    <div>
-
-                    </div>
+                <div id="button-6" class="button col-right">
+                    <span>Button 6</span>
                 </div>
             </div>
         </main>

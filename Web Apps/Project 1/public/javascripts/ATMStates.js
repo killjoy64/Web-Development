@@ -96,6 +96,14 @@ export default class ATMStates {
             document.getElementById("button-5").innerText = "NULL";
             document.getElementById("button-6").innerText = "Exit";
         }
+
+        for (let i = 1; i < 7; i++) {
+            let elem = document.getElementById("button-" + i);
+            if (elem.innerText == "NULL") {
+                elem.innerText = "";
+            }
+        }
+
     }
 
     controlButtonOne(event) {
@@ -110,12 +118,23 @@ export default class ATMStates {
                 let data = new FormData();
                 data.append("input", this.pin);
                 let bustCache = '?' + new Date().getTime();
+                let self = this;
                 const XHR = new XMLHttpRequest();
                 XHR.addEventListener("load",function() {
                     if (XHR.readyState == 4 && XHR.status == 200) {
-                        document.getElementById("output").innerText = "Welcome, " + XHR.responseText;
-                        document.getElementById("input").value = "";
-                        document.getElementById("input").setAttribute("placeholder", " ");
+                        let response = XHR.responseText;
+                        if (response == "NULL") {
+                            alert("Error logging you in. Try a different PIN!");
+                            document.getElementById("output").innerText = "Error!";
+                            document.getElementById("input").value = "";
+                            document.getElementById("input").setAttribute("placeholder", "Enter PIN Here");
+                            self.setState("ENTER_PIN_STATE");
+                            self.changeButtonText();
+                        } else {
+                            document.getElementById("output").innerText = "Welcome, " + XHR.responseText;
+                            document.getElementById("input").value = "";
+                            document.getElementById("input").setAttribute("placeholder", " ");
+                        }
                     }
                 });
                 XHR.open('POST', event.target.dataset.url + bustCache, true);
