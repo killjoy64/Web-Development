@@ -104,6 +104,7 @@ class app {
                             console.log("User[" + pin + "] sent a TRANSFER_FROM_SAVINGS request");
                             res.end(userData.transferFromSavings(amount));
                         }
+                        
                     } else if (request == 'deposit_savings') {
                         console.log("User[" + pin + "] sent a WITHDRAW_SAVINGS request");
                         if (formData['data'] != null) {
