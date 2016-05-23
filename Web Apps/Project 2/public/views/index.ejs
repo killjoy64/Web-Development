@@ -1,0 +1,728 @@
+<% include public/views/templates/header.ejs %>
+<div id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Personal Details
+                </a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <br>
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Title</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <select id="p_title">
+                                    <option value=""></option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Ms">Ms</option>
+                                    <option value="Miss">Miss</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Forename</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_forename" type="text" maxlength="100" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Surname</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_surname" type="text" maxlength="100" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Email Address</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_email" type="email" maxlength="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Mobile Number</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_tel" type="tel" maxlength="20" pattern="^(\+44|0)( |-)?[1-9][- 0-9]{7,11}$">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Date of Birth</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_dob" type="date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Martial Status</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <select id="p_martial">
+                                    <option value=""></option>
+                                    <option value="Civil Partnership">Civil Partnership</option>
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="In Relationship">In Relationship</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Separated">Separated</option>
+                                    <option value="Single">Single</option>
+                                    <option value="Widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Dependents</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_depend" type="number" step="1" min="0" max="10">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Credit/Store Cards Held</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_cards" type="number" step="1" min="0" max="20">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+            <br>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Address Details
+                </a>
+            </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <br>
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Property</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="a_prop" type="text" maxlength="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Street</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="p_street" type="text" maxlength="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Locality</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="a_locality" type="text" maxlength="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Town</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="a_town" type="text" maxlength="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Postcode</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="a_postcode" type="text" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Time at Address</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="a_time" type="month">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Address Status</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <select id="a_status">
+                                    <option value=""></option>
+                                    <option value="Co-owner">Co-owner</option>
+                                    <option value="Council Tenant">Council Tenant</option>
+                                    <option value="Housing Authority Tenant">Housing Authority Tenant</option>
+                                    <option value="Living With Parents">Living With Parents</option>
+                                    <option value="Mortgaged owner">Mortgaged owner</option>
+                                    <option value="Outright owner">Outright owner</option>
+                                    <option value="Renting">Renting</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span></span>
+                            </div>
+                            <div class="col-lg-6">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span></span>
+                            </div>
+                            <div class="col-lg-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                </form>
+            </div>
+        </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Employment Details
+                </a>
+            </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <br>
+            <form action="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Employer Name</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_name" type="text" maxlength="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Position</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_position" type="text" maxlength="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Town</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_town" type="text" maxlength="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Address Line 1</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_address-1" type="text" maxlength="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Address Line 2</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_address-2" type="text" maxlength="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Postcode</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_postcode" type="text" maxlength="8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Telephone Number</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_tel" type="tel" pattern="^(\+44|0)( |-)?[1-9][- 09]{7,11}$" maxlength="12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <span>Time at Employer</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <input id="e_time" type="month">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-lg-6">
+
+                        </div>
+                        <div class="col-lg-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFour">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Income and Expenditure
+                </a>
+            </h4>
+        </div>
+        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+            <br>
+            <form action="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Total Monthy Net Income</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_net-income" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Mortgage/Rent</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_mortgage" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Endowment/Repayment Vehicle</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_vehicle" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Council Tax</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_council-tax" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Credit Card Payments</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_credit-payments" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Secured Personal Loans</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_sec-loans" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Unsecured Personal Loans</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_unsec-loans" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Utilities</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_utilities" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Insurances</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_insurances" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Child Care/Private Education</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_cc-pe" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Child Support</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_child-support" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Pension Contribution</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_pension" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Food and Drink</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_food" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Telephone, TV, and Internet</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_extras" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Travel</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_travel" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Other</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="i_other" type="text" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span></span>
+                            </div>
+                            <div class="col-lg-6">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                            </div>
+                            <div class="col-lg-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </form>
+            <br>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFive">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Bank Details
+                </a>
+            </h4>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+            <br>
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Sort Code</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="b_sort-code" type="text" maxlength="8" pattern="^([0-9]{2}( |-)?){3}$">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Account Number</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="b_number" type="text" pattern="^[0-9]{6,8}$">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Lookup</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <span>Add Quotevine API lookup here</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Address Line 1</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="b_address-1" type="text" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Address Line 2</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="b_address-2" type="text" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Town</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="b_town" type="text" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span>Postcode</span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input id="b_postcode" type="text" maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <span></span>
+                            </div>
+                            <div class="col-lg-6">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                            </div>
+                            <div class="col-lg-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingSix">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Submit
+                </a>
+            </h4>
+        </div>
+        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+            <br>
+            <form method="post">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row center-block">
+                            <div class="col-md-6">
+                                <span>I agree to the Terms & Conditions, Privacy and Data Protection Policies</span>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="agree" type="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button id="button" type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+<% include public/views/templates/footer.ejs %>
